@@ -32,7 +32,7 @@ print(str)
 // 1 << 3 é a mesma coisa que 1 * 2ˆ3
 1 << 3
 
-//shft right >> é o memso que a potencia de base dois na DIVISAO
+//shift right >> é o memso que a potencia de base dois na DIVISAO
 // 32 << 1 é a mesma coisa que 32 / 2ˆ1
 32 >> 1
 
@@ -75,7 +75,7 @@ answer = answer * 10
 answer >> 3
 
 let exercises = 11
-var exercisesSolved = 0
+var exercisesSolved = 1
 
 /*
  
@@ -159,9 +159,65 @@ exercisesSolved += 1
  
  */
 
-let position : Int = 63
-let row : Int = position / 8
-let colmn : Int = position / 8
+let position : Int = 61
+print("Column: \(position % 8)")
+print("Row: \(position / 8)")
+exercisesSolved += 1
+
+/*
+ 
+ 8. Declare constants named dividend and divisor of type Double and assign both a value. Calculate the quotient and remainder of an integer division of dividend by divisor and store the results in constants named quotient and remainder. Calculate the remainder without using the operator %.
+ 
+ */
+
+let dividend : Double = 10
+let divisor : Double = 33
+var quotient : Double = 0
+var remainder : Double = 0
+
+quotient = dividend/divisor
+remainder = dividend - (divisor*quotient)
+exercisesSolved += 1
+
+/*
+ 
+ 9. A circle is made up of 2pi radians,corresponding with 360 degrees.Declare a constant degrees of type Double and assign it an initial value. Calculate the corresponding angle in radians and store the result in a constant named radians.
+ 
+ */
+let degrees : Double = 100
+let radians = (degrees*pi)/180
+exercisesSolved += 1
+
+/*
+ 
+ 10. Declare four constants named x1, y1, x2 and y2 of type Double. These constants represent the 2-dimensional coordinates of two points. Calculate the distance between these two points and store the result in a constant named distance.
+ 
+ */
+let x1 : Double = 5
+let y1 : Double = 2
+let x2 : Double = 8
+let y2 : Double = 4
+let distance = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2))
+exercisesSolved += 1
+
+/*
+ 
+ 11. Increment variable exercisesSolved a final time. Use the print function to print the percentage of exercises you managed to solve. The printed result should be a number between 0 and 1.
+ 
+ */
+exercisesSolved += 1
+
+let percentageOfSolvedExercises = exercisesSolved/11
+
+print(percentageOfSolvedExercises)
+
+
+
+
+
+
+
+
 
 
 
