@@ -67,14 +67,19 @@ for item in stride(from: 10, through: 9, by: -0.1) {
 
 /*
  Challenge B: It’s prime time
- When I’m acquainting myself with a programming language, one of the first things I do is write a function to determine whether or not a number is prime. That’s your first challenge.
+ When I’m acquainting myself with a programming language, one of the first things I do is write a function to determine whether or not a number is prime.
+ That’s your first challenge.
+ 
  First, write the following function:
+ 
  func isNumberDivisible(_ number: Int, by divisor: Int) -> Bool
- You’ll use this to determine if one number is divisible by another. It should return
- true when number is divisible by divisor.
+ You’ll use this to determine if one number is divisible by another. 
+ It should return true when number is divisible by divisor.
  Hint: You can use the modulo (%) operator to help you out here. Next, write the main function:
  func isPrime(_ number: Int) -> Bool
+ 
  This should return true if number is prime, and false otherwise. A number is prime if it’s only divisible by 1 and itself. 
+ 
  You should loop through the numbers from 1 to the number and find the number’s divisors. If it has any divisors other than 1 and itself, then the number isn’t prime. You’ll need to use the isNumberDivisible(_:by:) function you wrote earlier.
  Use this function to check the following cases:
  isPrime(6) // false
@@ -89,14 +94,68 @@ for item in stride(from: 10, through: 9, by: -0.1) {
  */
 
 func isNumberDivisible(_ number: Int, by divisor: Int) -> Bool{
-    
+    if number % divisor == 0 {
+        return true
+    }else{
+        return false
+    }
 }
 
 
 func isPrime(_ number: Int) -> Bool{
-   
+    var count = 1
+    var numberPrime = 0
+    while count <= number {
+        if number % count == 0 {
+            numberPrime += 1
+        }
+        count += 1
+    }
+    if numberPrime == 2 {
+        return true
+    }else{
+        return false
+    }
 }
-print(isPrime(13))
+print(isPrime(8893))
 
+/*
+ Challenge C: Recursive functions
+ In this challenge, you're going to see what happens when a function calls itself, a behavior called RECURSION. This may sound unusual, but it can be quite useful.
+ Your're going to write a function that computes a value from the fibonnaci sequence. Any value in the sequence is the sum of the previous two values. Th e sequence is defined such that the first two values equal 1. That is, fibonnaci(1) =  1 and fibonnaci(2) = 1.
+ 
+ Write your function using the following declaration:
+ 
+ func fibonnaci(_ number: Int) -> Int
+ 
+ Then, verify you've written the function correctly by executing it with the following numbers:
+ 
+ fibonnaci(1)
+ fibonnaci(2)
+ fibonnaci(3)
+ fibonnaci(4)
+ fibonnaci(5)
+ fibonnaci(6)
+ fibonnaci(7)
+ 
+ Hint1 : to values less than 0 you should return 0
+ 
+ Hint2: to start the seqence, hard-code a return value of 1 when a number equals 1
+ 
+ Hint3 : for any other value, you will need to return the sum of calling fibonacci with number - 1 and number -2
+ */
+
+func fibonacci(_ number: Int) -> Int{
+    if number == 1 || number == 2 {
+        return 1
+    }
+    if number == 0{
+        return 0
+    }
+    return fibonacci(number - 1) + fibonacci(number - 2)
+    
+}
+
+fibonacci(0)
 
 
