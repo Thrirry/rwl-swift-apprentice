@@ -53,6 +53,53 @@ if let ok = divideIfWhole(10988, by: 2){
  Challenge C: Refactor and reduce
  
  */
-var timesOfDivision = divideIfWhole(10, by: 2) ?? 0
-//if timesOfDivision == nil{
+var timesOfDivision = divideIfWhole(10, by: 3) ?? 0
+if timesOfDivision == 0{
+    print("Zero times!")
+}else{
+    print("It divides \(timesOfDivision) times")
+}
 
+/*
+ Challenge C: Nested optional
+ 
+ */
+let number : Int??? = 10
+
+/*
+ Fully force unrwap and print number:
+ */
+print(number!!!)
+
+/*
+ Optionally bind and print number with if let
+ */
+
+if let n1 = number{
+    if let n2 = n1{
+        if let n3 = n2 {
+            print(n3)
+        }
+    }
+}
+/*
+ Write a function printNumber(_ number : Int???) that uses quard to print the number only if it is bound.
+ */
+
+func printNumber(_ number: Int???){
+    guard let n1 = number else {
+        print("Vazio!")
+        return
+    }
+    guard let n2 = n1 else {
+        print("vazio 2")
+        return
+    }
+    guard let n3 = n2 else {
+        print("vazio")
+        return
+    }
+    print(n3)
+}
+
+printNumber(20)
