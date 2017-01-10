@@ -100,18 +100,14 @@ randomized(array6)
 // 6 - Write a func that calculates the max and min value in an array of integers. Calculate the values yourself; dont use the methods min and max. Return nil if the given array is empty
 
 func minMax(of numbers: [Int]) -> (min: Int, max: Int)?{
-    var array = numbers
-    var max = 0
-    var min = 0
+    var max = numbers[0]
+    var min = numbers[0]
     for item in numbers {
-        for next in array.enumerated(){
-            if item > next.offset+1.{
+            if item < min{
+                min = item
+            }else{
                 max = item
             }
-            if item < next {
-                min = item
-            }
-        }
     }
     
     return (min, max)
