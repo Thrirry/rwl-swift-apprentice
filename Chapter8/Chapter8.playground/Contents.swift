@@ -51,5 +51,5 @@ func removingOnce(_ item: Int, from array: [Int]) -> [Int]{
 }
 removingOnce(0, from: array5)
 
-// 3 - 
+// 3 -
 		
