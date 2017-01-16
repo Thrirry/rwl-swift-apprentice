@@ -44,3 +44,43 @@ printUserData(mariana)
 
 //Challenges
 
+// 1 - Which of the following are valid statements?
+//let dict1 : [Int, Int] = [:] - Invalid
+//let dict2 = [:] - Invalid
+let dict3 : [Int: Int] = [:]
+
+//for the next four statements, use the following dictionary:
+let dict4 = ["One" : 1, "Two" : 2, "Three" : 3]
+//dict4[1] - Invalid
+dict4["One"]
+//dict4["Zero"] = 0 - Invalid. Its would be only dict4 be var.
+//dict4[0] = "Zero" - Invalid.
+
+//for the next three statements, use the following dictionary:
+var dict5 = ["NY" : "New York", "CA" : "California"]
+dict5["NY"]
+dict5["WA"] = "Washington"
+dict5["CA"] = nil
+
+// 2 - Replacing dictionary values:
+// Write a function that swaps the value of two keys in dictionary. This is the function's signature:
+
+func swappingValueForKeys(_ key1: String, _ key2: String, in dictionary: [String: Int]) -> [String:Int]{
+    var dic = dictionary
+    if let temp = dic[key1] {
+        if let temp2 = dic[key2] {
+            dic[key1] = temp2
+            dic[key2] = temp
+        }else{
+            print("Erro!")
+        }
+    }else{
+        print("Erro!")
+    }
+    return dic
+}
+
+swappingValueForKeys("One", "Two", in: dict4)
+
+
+
