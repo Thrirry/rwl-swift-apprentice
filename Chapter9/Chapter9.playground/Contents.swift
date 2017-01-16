@@ -50,7 +50,7 @@ printUserData(mariana)
 let dict3 : [Int: Int] = [:]
 
 //for the next four statements, use the following dictionary:
-let dict4 = ["One" : 1, "Two" : 2, "Three" : 3]
+let dict4 = ["One" : 1, "Two" : 2, "Three" : 3, "Four" : 4]
 //dict4[1] - Invalid
 dict4["One"]
 //dict4["Zero"] = 0 - Invalid. Its would be only dict4 be var.
@@ -133,3 +133,45 @@ func merging(_ dict1: [String: String], with dict2: [String: String]) -> [String
 }
 
 print(merging(dict5, with: dict6))
+
+// 5 - Declare a function occurrencesOfCharacters that calculates which characters occurs in a string, as well as how often each these characters occurs. Return the result as a dictionary. This is the function signature:
+
+func occurrencesOfCharacters(in text : String) -> [Character : Int]{
+    var charactersReport = [Character: Int]()
+    var cont = 0
+    
+    for character in text.characters {
+        for char in text.characters {
+            if char == character {
+                cont += 1
+                charactersReport[character] = cont
+            }
+        }
+        cont = 0
+    }
+    return charactersReport
+}
+occurrencesOfCharacters(in:"mafagafo")
+
+// 6 - Write a function that returns true if all of the values of a dictionay [String: Int] are unique. Use a dictionary to test uniqueness. This is a function signature:
+func isInvertible(_ dictionary: [String : Int]) -> Bool{
+    var cont = 0
+    var retorno : Bool?
+    for item in dictionary.values {
+        for item in dictionary.values {
+            if item == item {
+                cont += 1
+            }
+        }
+        if cont > 1 {
+            retorno = false
+            
+        }else{
+            retorno = true
+        }
+        cont = 0
+    }
+    return retorno!
+}
+
+isInvertible(dict4)
