@@ -58,9 +58,11 @@ dict4["One"]
 
 //for the next three statements, use the following dictionary:
 var dict5 = ["NY" : "New York", "CA" : "California"]
+var dict6 = ["ND" : "Nevada", "TX" : "Texas", "DF" : "Distrito Federal"]
+
 dict5["NY"]
 dict5["WA"] = "Washington"
-dict5["CA"] = nil
+//dict5["CA"] = nil
 
 // 2 - Replacing dictionary values:
 // Write a function that swaps the value of two keys in dictionary. This is the function's signature:
@@ -82,5 +84,52 @@ func swappingValueForKeys(_ key1: String, _ key2: String, in dictionary: [String
 
 swappingValueForKeys("One", "Two", in: dict4)
 
+// 3 - Given a dictionary with two-letter state codes as keys, and the full state names as value, write a function that prints all the states with names longer than eight characters. For example, for the dictionary dict5, the output would be California.
 
+func printStateLongerThanEigth(_ dictionary : [String: String]) -> [String]{
+    var array : [String] = []
+    for stateName in dictionary.values{
+        if stateName.characters.count > 8 {
+            array.append(stateName)
+        }
+    }
+    return array
+}
 
+printStateLongerThanEigth(dict5)
+
+// 4 - Write a function that combines two dictionaries into one. If a certain key apperars in both dictioanries, ignore the pair from the first dictionay. This is the function's signature:
+func merging(_ dict1: [String: String], with dict2: [String: String]) -> [String: String]{
+    
+    var mergedDictonary : [String: String] = ["":""]
+    let dict1Size = dict1.count
+    let dict2Size = dict2.count
+    
+    if dict1Size >= dict2Size {
+        for itemD1 in dict1 {
+            for itemD2 in dict2 {
+                if itemD1.key == itemD2.key {
+                    mergedDictonary[itemD1.key] = itemD1.value
+                }else{
+                    mergedDictonary[itemD1.key] = itemD1.value
+                    mergedDictonary[itemD2.key] = itemD2.value
+                }
+            }
+        }
+    }else{
+        for itemD2 in dict2 {
+            for itemD1 in dict1 {
+                if itemD2.key == itemD1.key {
+                    mergedDictonary[itemD2.key] = itemD2.value
+                }else{
+                    mergedDictonary[itemD2.key] = itemD2.value
+                    mergedDictonary[itemD1.key] = itemD1.value
+                }
+            }
+        }
+    }
+    
+    return mergedDictonary
+}
+
+print(merging(dict5, with: dict6))
