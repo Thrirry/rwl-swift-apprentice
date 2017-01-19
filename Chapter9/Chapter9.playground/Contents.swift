@@ -7,7 +7,7 @@ var namesAndScores = ["Anna" : 2, "Brian" : 2, "Craig" : 8, "anna" : 3, "Donna" 
 var emptyDictionary : [String: Int] = [:]
 print()
 
-var hoff = ["nome" : "Hoff Silva", "celular" : 61991212700, "cidade" : "Brasilia", "estado" : "Distrito Federal", "pais" : "Brasil"] as [String : Any]
+var hoff = ["nome" : "Hoff Silva", "celular" : 61991212700, "cidade" : "Brasilia", "estado" : "Distrito Federal", "pais" : "Brasil", "numero" : 1] as [String : Any]
 var mariana = ["nome" : "Mariana Camara", "celular" : 61992756914, "cidade" : "Brasilia", "estado" : "Distrito Federal", "pais" : "Brasil"] as [String : Any]
 
 var name = "Anna"
@@ -44,6 +44,7 @@ printUserData(mariana)
 
 //Challenges
 
+//<<<<<<< Updated upstream
 // 1 - Which of the following are valid statements?
 //let dict1 : [Int, Int] = [:] - Invalid
 //let dict2 = [:] - Invalid
@@ -175,3 +176,30 @@ func isInvertible(_ dictionary: [String : Int]) -> Bool{
 }
 
 isInvertible(dict4)
+
+/*
+ 2. Replacingdictionaryvalues
+ Write a function that swaps the values of two keys in a dictionary. This is the function’s signature:
+ func swappingValuesForKeys(_ key1: String, _ key2: String, in dictionary: [String: Int]) -> [String: Int]
+ */
+
+func swappingValuesForKeys(_ key1: String, _ key2: String, in dictionary: [String: Int]) -> [String: Int]{
+    var temp : Int?
+    var dic = dictionary
+    if let value = dictionary[key1] {
+        temp = value
+    }
+    if let value = dictionary[key2] {
+        dic[key2] = temp
+        dic[key1] = value
+    }
+    
+    return dic
+}
+
+swappingValuesForKeys("Anna", "Brian", in: namesAndScores)
+
+
+//>>>>>>> Stashed changes
+
+
