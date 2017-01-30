@@ -203,3 +203,7 @@ swappingValuesForKeys("Anna", "Brian", in: namesAndScores)
 //>>>>>>> Stashed changes
 
 
+// 7 - Write an invert function that takes a dictionary[String:Int] and creates a new inverted dictionary [Int: String] where the values are the keys and the keys are the values. Note that for this function to work properly, the dictionary must be invertible. You can check this by using the function you created above to do precondition(isInvertible(input), "this dictionary can't be inverted") at the beginning of your function body. Your program will halt if this precondition is not met.This is the function signature:
+func invert(_ input: [String: Int]) -> [Int: String]{
+    return [1:""]
+}
