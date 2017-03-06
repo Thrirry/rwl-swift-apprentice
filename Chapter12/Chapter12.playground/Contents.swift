@@ -100,11 +100,37 @@ struct LevelWithPropertyObserver{
             if unlocked && id > LevelWithPropertyObserver.highestLevel {
                 LevelWithPropertyObserver.highestLevel = id
             }
+            print("didSet")
+        }
+        willSet{
+            print("willSet")
         }
     }
 }
 
 
+var lwpo = LevelWithPropertyObserver(id: 1, boss: "DV", unlocked: true)
+lwpo.unlocked = true
+LevelWithPropertyObserver.highestLevel
+
+//Limiting a variable
+struct LightBulb{
+    static let maxCurrent = 40
+    var current = 0 {
+        didSet{
+            if current > LightBulb.maxCurrent{
+                print("Current too high, falling back to previous setting.")
+                current = oldValue
+            }
+        }
+    }
+}
+
+var light = LightBulb()
+light.current = 50
+var current = light.current
+light.current = 40
+current = light.current
 
 
 
