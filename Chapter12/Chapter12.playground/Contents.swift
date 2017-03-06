@@ -63,6 +63,50 @@ let diagonal = tv.diagonal
 
 //Computed properties can be read-only or read-write
 
+//Type properties
+
+struct Level {
+    let id: Int
+    var boss: String
+    var unlocked: Bool
+}
+
+let l1 = Level(id: 1, boss: "Chamaleon", unlocked: true)
+let l2 = Level(id: 2, boss: "Squid", unlocked: false)
+
+struct LevelWithItSelf {
+    //type property
+    static var highestLevel = 1
+    let id: Int
+    var boss: String
+    var unlocked: Bool
+}
+
+let lwis1 = LevelWithItSelf(id: 1, boss: "Chamaleon", unlocked: true)
+//let highestLevel = lwis1.highestLevel//Erro: esta propriedade nao pode ser usada numa instancia.
+let highestLevel = LevelWithItSelf.highestLevel
+
+//Property Observers
+
+struct LevelWithPropertyObserver{
+    //type property
+    static var highestLevel = 1
+    //stored properties
+    let id: Int
+    var boss: String
+    //property observer
+    var unlocked: Bool {
+        didSet{
+            if unlocked && id > LevelWithPropertyObserver.highestLevel {
+                LevelWithPropertyObserver.highestLevel = id
+            }
+        }
+    }
+}
+
+
+
+
 
 
 
