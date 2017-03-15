@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestRoute" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Jst-Jb-Qcf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="345"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="345" id="l8z-tU-JVE"/>
+                                </constraints>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lat from" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jSK-JG-CMh">
+                                <rect key="frame" x="8" y="353" width="304" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="long from" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glV-wp-2Rt">
+                                <rect key="frame" x="8" y="391" width="304" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="lat to" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Fj-Jz-3AO">
+                                <rect key="frame" x="8" y="429" width="304" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="long to" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="om3-pY-hfa">
+                                <rect key="frame" x="8" y="467" width="304" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38I-9x-7w6">
+                                <rect key="frame" x="0.0" y="527" width="320" height="30"/>
+                                <color key="backgroundColor" red="0.1419495774" green="0.6059908302" blue="0.7325129534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.14251577230000001" green="0.26802013629999999" blue="0.48053480939999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateRoute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nuL-9M-opJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="glV-wp-2Rt" secondAttribute="trailing" constant="8" id="1oJ-ua-Ddb"/>
+                            <constraint firstItem="glV-wp-2Rt" firstAttribute="top" secondItem="jSK-JG-CMh" secondAttribute="bottom" constant="8" id="AzA-Jy-hXR"/>
+                            <constraint firstItem="om3-pY-hfa" firstAttribute="top" secondItem="9Fj-Jz-3AO" secondAttribute="bottom" constant="8" id="Eux-OR-k88"/>
+                            <constraint firstItem="Jst-Jb-Qcf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FxC-Ab-6Z2"/>
+                            <constraint firstItem="jSK-JG-CMh" firstAttribute="top" secondItem="Jst-Jb-Qcf" secondAttribute="bottom" constant="8" id="G9m-KD-TQ4"/>
+                            <constraint firstItem="Jst-Jb-Qcf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IPH-iB-fZP"/>
+                            <constraint firstItem="9Fj-Jz-3AO" firstAttribute="top" secondItem="glV-wp-2Rt" secondAttribute="bottom" constant="8" id="K7a-gP-NxG"/>
+                            <constraint firstAttribute="trailing" secondItem="jSK-JG-CMh" secondAttribute="trailing" constant="8" id="Lie-yb-9vF"/>
+                            <constraint firstAttribute="trailing" secondItem="om3-pY-hfa" secondAttribute="trailing" constant="8" id="Pze-Lc-tQj"/>
+                            <constraint firstAttribute="trailing" secondItem="Jst-Jb-Qcf" secondAttribute="trailing" id="VJp-XP-ltL"/>
+                            <constraint firstItem="om3-pY-hfa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="aTG-Rh-zAJ"/>
+                            <constraint firstAttribute="trailing" secondItem="9Fj-Jz-3AO" secondAttribute="trailing" constant="8" id="crH-Yn-t9L"/>
+                            <constraint firstAttribute="trailing" secondItem="38I-9x-7w6" secondAttribute="trailing" id="dUW-nC-Tgs"/>
+                            <constraint firstItem="38I-9x-7w6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kyM-Zf-J3d"/>
+                            <constraint firstItem="38I-9x-7w6" firstAttribute="top" secondItem="om3-pY-hfa" secondAttribute="bottom" constant="30" id="lD4-KN-zhb"/>
+                            <constraint firstItem="jSK-JG-CMh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="rh4-8B-MkM"/>
+                            <constraint firstItem="glV-wp-2Rt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="tbV-r7-bSv"/>
+                            <constraint firstItem="9Fj-Jz-3AO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="tlc-gj-Oyn"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="650"/>
+                    <connections>
+                        <outlet property="mapView" destination="Jst-Jb-Qcf" id="MIb-46-h8F"/>
+                        <outlet property="tfLatFrom" destination="jSK-JG-CMh" id="5qT-gF-ki7"/>
+                        <outlet property="tfLatTo" destination="9Fj-Jz-3AO" id="irP-Uw-lig"/>
+                        <outlet property="tfLongFrom" destination="glV-wp-2Rt" id="qTf-yG-B4P"/>
+                        <outlet property="tfLongTo" destination="om3-pY-hfa" id="jog-Aa-PkT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="307.5" y="133.75"/>
+        </scene>
+    </scenes>
+</document>
